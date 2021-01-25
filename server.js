@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const { connect } = require("mongoose");
 const cors = require("cors");
 const { success, error } = require("consola");
-const { DB, PORT } = require("./config");
-
+// const { DB, PORT } = require("./config");
+const DB = "mongodb+srv://api_testing:api_testing@cluster0.mgvmw.mongodb.net/api_testing?retryWrites=true&w=majority"
 /*------------------------initialize express app----------------------------*/
 const app = express();
 
@@ -34,6 +34,7 @@ let startApp = async () => {
       badge: true,
     });
     //listen port
+    const PORT = 5000;
     app.listen(PORT, (err) => {
       if (err) {
         error({ message: err, badge: true });
